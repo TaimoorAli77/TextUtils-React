@@ -1,4 +1,4 @@
-{  "homepage": "https://github.com/TaimoorAli77/TextUtils-React",
+{  "homepage": "https://github.com/TaimoorAli77/TextUtils-React/",
   "name": "textutils",
   "version": "0.1.0",
   "private": true,
@@ -10,8 +10,9 @@
     "react-scripts": "0.9.5"
   },
   "scripts": {
+
     "predeploy": "npm run build",
-       "deploy": "gh-pages -d build",
+      "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
