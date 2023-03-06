@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import './App.css';
 import Alert from './components/Alert';
-// import About from './components/About';
+import About from './components/About';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
-// import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 
 function App() {
@@ -28,9 +28,9 @@ const toggleMode = ()=>{
     document.body.style.color = 'white';
     showAlert('Dark mode has been enabled','success');
     // document.title = 'TextUtils - Dark Mode '
-    setInterval(()=>{
- document.title = 'TextUtils is an amazing app'
-    }, 2000);
+//     setInterval(()=>{
+//  document.title = 'TextUtils is an amazing app'
+//     }, 2000);
     
     setInterval(()=>{
       document.title = 'Install TextUtils'
@@ -41,27 +41,27 @@ const toggleMode = ()=>{
     document.body.style.backgroundColor = 'white';
     document.body.style.color = 'black';
     showAlert('Light mode has been enabled','success');
-    document.title = 'TextUtils - Light Mode '
+    // document.title = 'TextUtils - Light Mode '
 
 
 }}
   return(
     <React.Fragment>   
-          {/* <BrowserRouter>                               */}
+          <BrowserRouter>                              
 <Navbar title="TextUtils"  mode={mode} toggleMode={toggleMode} />
 <div  style={{height:"3.5em"}}>
 
 <Alert      alert={alert}    />
 </div>
 <div className="container my-3">
-{/* <Routes> */}
-{/* <Route exact path="/" element={} />                */}
-<TextForm heading="Enter the text to analyze below" mode={mode} showAlert={showAlert} />
-{/* <Route exact path="/about" element={} /> */}
-{/* <About/> */}
-{/* </Routes> */}
+<Routes>
+<Route exact path="/" element={<TextForm heading="Enter the text to analyze below" mode={mode} showAlert={showAlert} />
+} />               
+<Route exact path="/about" element={<About mode={mode}/>} />
+
+</Routes>
 </div>
-{/* </BrowserRouter>  */}
+</BrowserRouter> 
   </React.Fragment>
   
   )
